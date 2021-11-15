@@ -30,7 +30,9 @@ public class TreeStory {
             System.out.println("Enter a noun:");
             noun = sc.next();
             isInvalidWord = noun.equalsIgnoreCase("dork")
-                    || noun.equalsIgnoreCase("jerk");
+                    || noun.equalsIgnoreCase("jerk")
+                    || noun.contains("or")
+                    || noun.contains("er");
 
             if(isInvalidWord){
                 System.out.println("That language is not allowed. Try again.");;
