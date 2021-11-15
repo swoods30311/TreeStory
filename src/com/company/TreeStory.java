@@ -1,9 +1,9 @@
-import java.io.Console;
+import java.util.Scanner;
 
 public class TreeStory {
 
     public static void main(String[] args) {
-        Console console = System.console();
+        Scanner sc = new Scanner(System.in);
         /*  Some terms:
             noun - Person, place or thing
             verb - An action
@@ -11,32 +11,45 @@ public class TreeStory {
             Enter your amazing code here!
         */
         // __Name__ is a __ adjective__ __noun__. They are always __adverb__ __verb__.
-        String ageAsString = console.readLine("How old are you? ");
-        int age = Integer.parseInt(ageAsString);
+
+        System.out.println("How old are you?");
+        int age = sc.nextInt();
         if(age < 13){
             // Insert exit code
-            console.printf("Sorry you must be at least 13 to use this program.\n");
+            System.out.println("Sorry you must be at least 13 to use this program.");
             System.exit(0);
         }
-        String name = console.readLine("Enter a name:  ");
-        String adjective = console.readLine("Enter an adjective:  ");
+        System.out.println("Enter a name:");
+        String name = sc.next();
+        System.out.println("Enter an adjective:");
+        String adjective = sc.next();
         String noun;
         boolean isInvalidWord;
+        int profanity = 0;
         do{
-            noun = console.readLine("Enter a noun:  ");
-            isInvalidWord =noun.equalsIgnoreCase("dork") ||
-                    noun.equalsIgnoreCase("jerk");
+            System.out.println("Enter a noun:");
+            noun = sc.next();
+            isInvalidWord = noun.equalsIgnoreCase("dork")
+                    || noun.equalsIgnoreCase("jerk");
 
             if(isInvalidWord){
-                console.printf("That language is not allowed. Try again. \n\n");
+                System.out.println("That language is not allowed. Try again.");;
+                profanity++;
             }
         }while(isInvalidWord);
-        String adverb = console.readLine("Enter an adverb:  ");
-        String verb = console.readLine("Enter a verb ending with -ing:  ");
 
-        console.printf("Your TreeStory: \n----------\n");
-        console.printf("%s is a %s %s. ", name, adjective, noun);
-        console.printf("(S)He is always %s %s. ", adverb, verb);
+        System.out.println("Enter an adverb:  ");
+        String adverb = sc.next();
+        System.out.println("Enter a verb ending with -ing:");
+        String verb = sc.next();
+
+        System.out.println("Your TreeStory: ");;
+        System.out.printf("%s is a %s %s. ", name, adjective, noun);
+        System.out.printf("(S)He is always %s %s. ", adverb, verb);
+
+        if(profanity > 3){
+            System.out.println("Good work even though your ignorant ass don't have any manners");
+        }
     }
 
 }
