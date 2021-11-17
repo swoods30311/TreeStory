@@ -49,8 +49,10 @@ public class TreeStory {
         System.out.printf("%s is a %s %s. ", name, adjective, noun);
         System.out.printf("(S)He is always %s %s. ", adverb, verb);
 
-        if(profanity > 3){
+        if(profanity == 3){
             System.out.println("Good work even though your ignorant ass don't have any manners");
+        } else if (profanity > 3) {
+            System.out.println("Insults and disrespect are for the intellectually and morally poor");
         }
     }
 
