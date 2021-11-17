@@ -28,9 +28,9 @@ public class TreeStory {
         int profanity = 0;
         do{
             System.out.println("Enter a noun:");
-            noun = sc.next();
-            isInvalidWord = noun.equalsIgnoreCase("dork")
-                    || noun.equalsIgnoreCase("jerk")
+            noun = sc.next().toLowerCase();
+            isInvalidWord = noun.equals("dork")
+                    || noun.equals("jerk")
                     || noun.contains("or")
                     || noun.contains("er");
 
