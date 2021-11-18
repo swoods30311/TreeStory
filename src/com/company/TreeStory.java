@@ -49,11 +49,16 @@ public class TreeStory {
         System.out.printf("%s is a %s %s. ", name, adjective, noun);
         System.out.printf("(S)He is always %s %s. ", adverb, verb);
 
-        if(profanity == 3){
-            System.out.println("Good work even though your ignorant ass don't have any manners");
-        } else if (profanity > 3) {
-            System.out.println("Insults and disrespect are for the intellectually and morally poor");
+        if(profanity >= 2 && profanity <= 5){
+            System.out.println("Is that it lil bruh? I wish you would use some more profanity");
+        } else if (profanity == 6 || profanity == 9) {
+            System.out.println("You're one blissfully ignorant mofo");
+        } else {
+            String slattBack = profanity == 12 || profanity == 15  ? "Is there a pattern to your madness?": "Seems like your content with ignorance";
+            System.out.println(slattBack);
         }
+
+
     }
 
 }
