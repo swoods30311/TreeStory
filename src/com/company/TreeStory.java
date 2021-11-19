@@ -6,11 +6,14 @@ public class TreeStory {
         Scanner sc = new Scanner(System.in);
         /*  Some terms:
             noun - Person, place or thing
+                 - The words "dork", "jerk" and words with "er" and "or" are NOT allowed and are considered profane
             verb - An action
             adjective - A description used to modify or describe a noun
+            Different messages will be printed depending on the amount of profanity used
             Enter your amazing code here!
         */
         // __Name__ is a __ adjective__ __noun__. They are always __adverb__ __verb__.
+        // Prints optional message depending on the amount of profanity (forbidden words)
 
         System.out.println("How old are you?");
         int age = sc.nextInt();
@@ -47,7 +50,7 @@ public class TreeStory {
 
         System.out.println("Your TreeStory: ");;
         System.out.printf("%s is a %s %s. ", name, adjective, noun);
-        System.out.printf("(S)He is always %s %s. ", adverb, verb);
+        System.out.printf("(S)He is always %s %s. %n", adverb, verb);
 
         if(profanity >= 2 && profanity <= 5){
             System.out.println("Is that it lil bruh? I wish you would use some more profanity");
